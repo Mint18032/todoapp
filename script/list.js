@@ -1,3 +1,16 @@
+// Create a sentence to show the number of remaining tasks.
+var head2 = document.getElementById("head2");
+var tasks = 5;
+function update() {
+    if (tasks === 0) {
+        head2.value = "No task remaining!";
+    } else if (tasks === 1) {
+        head2.value = "1 task to do";
+    } else {
+        head2.value = tasks.toString + " tasks to do";
+    }
+}
+
 // Create a "close" button and append it to each list item
 var myNodelist = document.getElementsByTagName("LI");
 var i;
@@ -37,6 +50,8 @@ function newElement() {
         alert("You must write something!");
     } else {
         document.getElementById("myUL").appendChild(li);
+        tasks += 1;
+        update();
     }
     document.getElementById("myInput").value = "";
 
