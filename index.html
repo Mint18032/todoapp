@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Todo App</title>
+    <link href="./stylesheet/list.css" rel="stylesheet">
+    <link href="./stylesheet/calendar.css" rel="stylesheet">
+    <link href="./stylesheet/input.css" rel="stylesheet">
+</head>
+
+<body>
+    <h1 style="font-size: 400%;"> <input type="text" name="search" placeholder="Search.." id="searchBtn"><br />
+        My tasks</h1>
+    <div class="month">
+        20<sup>th</sup> January<br>
+        <span style="font-size:18px">2022</span>
+    </div>
+
+    <ul id="myUL">
+        <li>Something to do</li>
+        <li class="checked">Something checked</li>
+        <li>Something to do</li>
+        <li>Something to do</li>
+        <li>Something to do</li>
+        <li>Something to do</li>
+        <li>Something to do</li>
+    </ul>
+
+    <div id="myDIV" class="addBar">
+        <input type="text" id="myInput" placeholder="New task...">
+        <span onclick="newElement()" class="addBtn">+</span>
+    </div>
+
+    <script src="./script/list.js"></script>
+</body>
+
+</html>

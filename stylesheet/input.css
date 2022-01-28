@@ -1,0 +1,52 @@
+/* Style the addBar */
+.addBar {
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Clear floats after the addBar */
+.addBar:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the input */
+input {
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  width: 80%;
+  padding: 10px;
+  float: left;
+  font-size: 16px;
+}
+
+/* Style the "Add" button */
+.addBtn {
+  width: 20%;
+  height: 200%;
+  color: #555;
+  float: left;
+  text-align: center;
+  font-size: 200%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.addBtn:hover {
+  background-color: #ff9e22;
+}
+
+#searchBtn {
+  width: 130px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+/* When the input field gets focus, change its width to 100% */
+#searchBtn:focus {
+  width: 100%;
+}
