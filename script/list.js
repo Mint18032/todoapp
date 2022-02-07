@@ -1,13 +1,18 @@
-// Create a sentence to show the number of remaining tasks.
-var head2 = document.getElementById("head2");
-var tasks = 5;
+// The date.
+const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+var date = new Date();
+document.getElementById("day").innerHTML = date.getDate() + " " + months[date.getMonth()];
+document.getElementById("year").innerHTML = date.getFullYear();
+
+// The number of remaining tasks.
+var tasks = 7;
 function update() {
-    if (tasks === 0) {
-        head2.value = "No task remaining!";
-    } else if (tasks === 1) {
-        head2.value = "1 task to do";
+    if (tasks == 0) {
+        document.getElementById("head2").innerHTML = "&emsp;No task remaining!";
+    } else if (tasks == 1) {
+        document.getElementById("head2").innerHTML = "&emsp;1 task to do";
     } else {
-        head2.value = tasks.toString + " tasks to do";
+        document.getElementById("head2").innerHTML = "&emsp;" + tasks + " tasks to do";
     }
 }
 
@@ -29,6 +34,8 @@ for (i = 0; i < close.length; i++) {
     close[i].onclick = function () {
         var div = this.parentElement;
         div.style.display = "none";
+        tasks--;
+        update();
     }
 }
 
@@ -50,7 +57,7 @@ function newElement() {
         alert("You must write something!");
     } else {
         document.getElementById("myUL").appendChild(li);
-        tasks += 1;
+        tasks++;
         update();
     }
     document.getElementById("myInput").value = "";
