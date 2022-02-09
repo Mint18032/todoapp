@@ -1,11 +1,17 @@
-// The date.
-const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-var date = new Date();
-document.getElementById("day").innerHTML = date.getDate() + " " + months[date.getMonth()];
-document.getElementById("year").innerHTML = date.getFullYear();
-
+// Read data from localStorage.
+var arrList = JSON.parse(localStorage.getItem("arrList")) || [];
 // The number of remaining tasks.
-var tasks = 7;
+var tasks = arrList.length;
+for (var i = 0; i < tasks; i++) {
+    var li = document.createElement("li");
+    var inputValue = arrList[i];
+    var t = document.createTextNode(inputValue);
+    li.appendChild(t);
+    if (inputValue !== '') {
+        document.getElementById("myUL").appendChild(li);
+    }
+}
+
 function update() {
     if (tasks == 0) {
         document.getElementById("head2").innerHTML = "&emsp;No task remaining!";
@@ -15,6 +21,7 @@ function update() {
         document.getElementById("head2").innerHTML = "&emsp;" + tasks + " tasks to do";
     }
 }
+(update)();
 
 // Create a "close" button and append it to each list item
 var myNodelist = document.getElementsByTagName("LI");
@@ -27,17 +34,29 @@ for (i = 0; i < myNodelist.length; i++) {
     myNodelist[i].appendChild(span);
 }
 
-// Click on a close button to hide the current list item
+// Click on a close button to hide the current list item and remove it from localStorage.
 var close = document.getElementsByClassName("close");
-var i;
-for (i = 0; i < close.length; i++) {
-    close[i].onclick = function () {
-        var div = this.parentElement;
-        div.style.display = "none";
-        tasks--;
-        update();
+function setCloseBtn() {
+    for (i = 0; i < close.length; i++) {
+        close[i].onclick = function () {
+            var div = this.parentElement;
+            div.style.display = "none";
+            // Remove from localStorage
+            var text = div.innerText.substring(0, div.innerText.length - 1);
+            alert("\"" + text + "\" is removed from your to do list!");
+            for (let j = 0; j < tasks; j++) {
+                if (text == arrList[j]) {
+                    arrList.splice(j, 1);
+                    localStorage.setItem("arrList", JSON.stringify(arrList));
+                    break;
+                }
+            }
+            tasks--;
+            update();
+        }
     }
 }
+(setCloseBtn)();
 
 // Add a "checked" symbol when clicking on a list item
 var list = document.querySelector('ul');
@@ -57,6 +76,10 @@ function newElement() {
         alert("You must write something!");
     } else {
         document.getElementById("myUL").appendChild(li);
+        // Add new item to localStorage
+        arrList.push(inputValue);
+        localStorage.setItem("arrList", JSON.stringify(arrList));
+        // Update
         tasks++;
         update();
     }
@@ -68,10 +91,5 @@ function newElement() {
     span.appendChild(txt);
     li.appendChild(span);
 
-    for (i = 0; i < close.length; i++) {
-        close[i].onclick = function () {
-            var div = this.parentElement;
-            div.style.display = "none";
-        }
-    }
+    setCloseBtn();
 }
