@@ -27,9 +27,9 @@ input {
 /* Style the "Add" button */
 .addBtn {
   width: 20%;
-  height: 300%;
+  height: 100%;
   color: #555;
-  background-color: white;
+  background-color: #fff5cc;
   float: left;
   text-align: center;
   font-size: 250%;
@@ -58,6 +58,18 @@ input {
 }
 
 /* When the input field gets focus, change its width to 100% */
-#searchBtn:focus {
-  width: 100%;
+@media only screen and (min-width: 768px) {
+  #searchBtn:focus {
+    width: 92%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  #searchBtn:focus {
+    width: 85%;
+  }
+}
+@media only screen and (max-width: 320px) {
+  #searchBtn {
+    display: none;
+  }
 }

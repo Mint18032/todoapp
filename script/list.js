@@ -46,7 +46,7 @@ function setCloseBtn() {
             alert("\"" + text + "\" is removed from your to do list!");
             for (let j = 0; j < tasks; j++) {
                 if (text == arrList[j]) {
-                    arrList.splice(j, 1);
+                    arrList.splice(j, 1); // Remove from arrList.
                     localStorage.setItem("arrList", JSON.stringify(arrList));
                     break;
                 }
