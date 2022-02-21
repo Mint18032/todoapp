@@ -55,6 +55,12 @@ input {
   padding: 20px 8px 20px 40px;
   border-radius: 1.5em;
   background: #eee;
+}
+
+#myInputL {
+  padding: 20px 8px 20px 40px;
+  border-radius: 1.5em;
+  background: #eee;
   font-size: 150%;
 }
 
