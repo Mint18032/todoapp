@@ -93,3 +93,30 @@ function newElement() {
 
     setCloseBtn();
 }
+
+function newElementL() {
+    var li = document.createElement("li");
+    var inputValue = document.getElementById("myInputL").value;
+    var t = document.createTextNode(inputValue);
+    li.appendChild(t);
+    if (inputValue === '') {
+        alert("You must write something!");
+    } else {
+        document.getElementById("myUL").appendChild(li);
+        // Add new item to localStorage
+        arrList.push(inputValue);
+        localStorage.setItem("arrList", JSON.stringify(arrList));
+        // Update
+        tasks++;
+        update();
+    }
+    document.getElementById("myInputL").value = "";
+
+    var span = document.createElement("SPAN");
+    var txt = document.createTextNode("\u00D7");
+    span.className = "close";
+    span.appendChild(txt);
+    li.appendChild(span);
+
+    setCloseBtn();
+}

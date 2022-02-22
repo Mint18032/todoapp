@@ -8,47 +8,92 @@
     <link href="./stylesheet/responsive.css" rel="stylesheet">
     <link href="./stylesheet/input.css" rel="stylesheet">
     <link href="./stylesheet/scrollBar.css" rel="stylesheet">
+    <link href="./stylesheet/sidebar.css" rel="stylesheet">
 </head>
 
 <body>
     <div id="sidebar" class="sidebar">
         <input type="text" id="myInputL" placeholder="New task...">
-        <div onclick="newElement()" class="addBtnL">+</div>
+        <div onclick="newElementL()" class="addBtnL">+</div>
         <br />
-        <a class="active" href="#home">Home</a>
-        <a href="#all">All tasks</a>
-        <a href="#completed">Completed</a>
-        <a href="#about">About</a>
+        <a class="link" id="ho" onclick="openPage('home', 'ho')">Home</a>
+        <a class="link" id="al" onclick="openPage('all', 'al')">All tasks</a>
+        <a class="link" id="co" onclick="openPage('completed', 'co')">Completed</a>
+        <a class="link" id="ab" onclick="openPage('about', 'ab')">About</a>
     </div>
 
     <div class="content">
-        <input type="text" name="search" placeholder="🔎 Search" id="searchBtn">
-        <div class="container" onclick="myFunction(this)">
-            <div class="bar1"></div>
-            <div class="bar2"></div>
-            <div class="bar3"></div>
-        </div>
-        <br />
-        <h1 id="title">&nbsp; My tasks</h1>
-        <div class="month">
-            <span id="day"></span><br>
-            <span style="font-size:50%" id="year"></span>
+        <div id="home" class="tabcontent">
+            <input type="text" name="search" placeholder="🔎 Search" id="searchBtn">
+            <div id="menuBtn" class="container" onclick="myFunction(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+            <br />
+            <h1 id="title">&nbsp; My tasks</h1>
+            <div class="month">
+                <span id="day"></span><br>
+                <span style="font-size:50%" id="year"></span>
+            </div>
+
+            <h2 id="head2"></h2>
+            <ul id="myUL">
+            </ul>
+            <br /><br />
+
+            <div id="myDIV" class="addBar">
+                <input style="font-size: 130%;" type="text" id="myInput" placeholder="New task...">
+                <span onclick="newElement()" class="addBtnS">+</span>
+            </div>
         </div>
 
-        <h2 id="head2"></h2>
-        <ul id="myUL">
-        </ul>
-        <br /><br />
+        <div id="all" class="tabcontent">
+            <input type="text" name="search" placeholder="🔎 Search" id="searchBtn">
+            <div id="menuBtn" class="container" onclick="myFunction(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+            <br />
+            <h1 id="title">&nbsp; All tasks</h1>
 
-        <div id="myDIV" class="addBar">
-            <input style="font-size: 130%;" type="text" id="myInput" placeholder="New task...">
-            <span onclick="newElement()" class="addBtnS">+</span>
+            <h1>Doing</h1>
+            <h2 id="head2"></h2>
+            <ul id="myUL">
+            </ul>
+            <br />
+            <h1>Completed</h1>
+            <br />
+        </div>
+
+        <div id="completed" class="tabcontent">
+            <input type="text" name="search" placeholder="🔎 Search" id="searchBtn">
+            <div id="menuBtn" class="container" onclick="myFunction(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+            <br />
+            <h1 id="title">&nbsp; Completed</h1>
+        </div>
+
+        <div id="about" class="tabcontent">
+            <input type="text" name="search" placeholder="🔎 Search" id="searchBtn">
+            <div id="menuBtn" class="container" onclick="myFunction(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+            <br />
+            <h1 id="title">&nbsp; About</h1>
+            <p style="font-size: 120%; text-align: center;">Minh Quach's app.</p>
         </div>
     </div>
 
 
     <script src="./script/list.js"></script>
-    <script src="./script/calendar.js"></script>
+    <script src="./script/effects.js"></script>
 </body>
 
 </html>

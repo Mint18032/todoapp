@@ -1,0 +1,49 @@
+/* The side navigation menu */
+.sidebar {
+  margin: 0;
+  top: 0;
+  padding: 0;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+  transition: 0.5s;
+  z-index: 1; 
+}
+
+/* Sidebar links */
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 16px;
+  width: 100%;
+  font-size: 120%;
+  text-decoration: none;
+  transition: all 0.5s ease-out;
+}
+
+.link:hover {
+  background-color: rgb(153, 153, 153);
+  color: white;
+}
+
+/* Page content. */
+div.content {
+  transition: margin-left .5s;
+  padding: 1px 6px;
+  height: 100%;
+}
+
+.tabcontent { 
+  display: none;
+  height: 100%;
+}
+
+#home {
+  display: block;
+}
+
+.container {
+  cursor: pointer;
+  float: right;
+}
