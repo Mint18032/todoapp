@@ -27,12 +27,10 @@ input {
 /* Style the "Add" button */
 .addBtnS {
   width: 20%;
-  padding: 0px 10px 5px 0px;
   color: #555;
   background-color: #fff5cc;
   float: left;
   text-align: center;
-  font-size: 250%;
   cursor: pointer;
   transition: 0.3s;
 }

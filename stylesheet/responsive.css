@@ -6,7 +6,7 @@
 
   /* Sidebar */
   .sidebar {
-    width: 20%;
+    width: 20% !important;
     position: relative;
   }
 
@@ -68,13 +68,13 @@
     width: 0;
   }
 
-  .myInput {
-    font-size: 120%;
-    padding: 13px;  
+  #myInput {
+    font-size: 150%;
   }
 
   .addBtnS {
-   padding: 0px 10px 5px 0px;
+    padding: 0px 10px 5px 0px;
+    font-size: 250%;
   }
 
   #myInputL {
@@ -168,13 +168,13 @@
     transition: 0.4s;
   }
 
-  .myInput {
-    font-size: 120%;
-    padding: 13px;
+  #myInput {
+    font-size: 140%;
   }
 
   .addBtnS {
-   padding: 0px 10px 5px 0px;
+    padding: 0px 10px 5px 0px;
+    font-size: 250%;
   }
 
   #myInputL {
@@ -220,17 +220,13 @@
   }
 
   .addBtnS {
-    padding: 2px 2px;
-    font-size: 120%;
+    font-size: 200%;
   }
 
-  .myInput {
-    font-size: 110%;
+  #myInput {
+    bottom: 0;
+    font-size: 100%;
     padding: 10px;
-  }
-
-  .addBtnS {
-    padding: 0px 5px 0px 0px;
   }
 
   #myInputL {

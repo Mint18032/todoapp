@@ -5,9 +5,9 @@ document.getElementById("day").innerHTML = date.getDate() + " " + months[date.ge
 document.getElementById("year").innerHTML = date.getFullYear();
 var linkNames = ["ho", "co", "al", "ab"];
 
-function myFunction(x) {
+function sidebar() {
     if (document.getElementById('sidebar').style.width == '80%') {
-        document.getElementById('sidebar').style.width = '0';
+        document.getElementById('sidebar').style.width = "";
     } else {
         document.getElementById('sidebar').style.width = '80%';
     }
