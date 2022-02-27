@@ -1,16 +1,22 @@
 // Read data from localStorage.
 var arrList = JSON.parse(localStorage.getItem("arrList")) || [];
+var completedList = JSON.parse(localStorage.getItem("completed")) || [];
 // The number of remaining tasks.
 var tasks = arrList.length;
-for (var i = 0; i < tasks; i++) {
-    var li = document.createElement("li");
-    var inputValue = arrList[i];
-    var t = document.createTextNode(inputValue);
-    li.appendChild(t);
-    if (inputValue !== '') {
-        document.getElementById("myUL").appendChild(li);
+function createList(id, mylist) {
+    for (var i = 0; i < mylist.length; i++) {
+        var li = document.createElement("li");
+        var inputValue = mylist[i];
+        if (inputValue !== '') {
+            var t = document.createTextNode(inputValue);
+            li.appendChild(t);
+            document.getElementById(id).appendChild(li);
+        }
     }
 }
+(createList)("myUL", arrList);
+(createList)("myUL2", arrList);
+(createList)("myUL3", completedList);
 
 function update() {
     if (tasks == 0) {
@@ -20,6 +26,9 @@ function update() {
     } else {
         document.getElementById("head2").innerHTML = "&emsp;" + tasks + " tasks to do";
     }
+    let d = completedList.length / (tasks + completedList.length);
+    document.getElementById('done').style.width = (d * 100) + '%';
+    document.getElementById('done').innerHTML = (d * 100).toFixed(0) + '%';
 }
 (update)();
 
@@ -32,6 +41,19 @@ for (i = 0; i < myNodelist.length; i++) {
     span.className = "close";
     span.appendChild(txt);
     myNodelist[i].appendChild(span);
+}
+
+function updateUL() {
+    let myUL2 = document.getElementById('myUL2');
+    while (myUL2.firstChild) {
+        myUL2.removeChild(myUL2.firstChild);
+    }
+    createList("myUL2", arrList);
+    let myUL3 = document.getElementById('myUL3');
+    while (myUL3.firstChild) {
+        myUL3.removeChild(myUL3.firstChild);
+    }
+    createList("myUL3", completedList);
 }
 
 // Click on a close button to hide the current list item and remove it from localStorage.
@@ -47,7 +69,10 @@ function setCloseBtn() {
             for (let j = 0; j < tasks; j++) {
                 if (text == arrList[j]) {
                     arrList.splice(j, 1); // Remove from arrList.
+                    completedList.push(text);
                     localStorage.setItem("arrList", JSON.stringify(arrList));
+                    localStorage.setItem("completed", JSON.stringify(completedList));
+                    updateUL();
                     break;
                 }
             }

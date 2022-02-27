@@ -74,3 +74,16 @@ ul li.checked::before {
   background-color: transparent;
   color: white;
 }
+
+.head1 {
+  border-left: 2px solid #0000009d;
+  padding-left: 1%;
+}
+
+#myUL3 .close {
+  display: none;
+}
+
+#myUL2 .close {
+  display: none;
+}

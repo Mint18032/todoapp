@@ -3,7 +3,7 @@ const months = ["January", "February", "March", "April", "May", "June", "July", 
 var date = new Date();
 document.getElementById("day").innerHTML = date.getDate() + " " + months[date.getMonth()];
 document.getElementById("year").innerHTML = date.getFullYear();
-var linkNames = ["ho", "co", "al", "ab"];
+var linkNames = ["ho", "al", "ab"];
 
 function sidebar() {
     if (document.getElementById('sidebar').style.width == '80%') {

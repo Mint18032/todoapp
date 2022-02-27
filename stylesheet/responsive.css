@@ -271,6 +271,10 @@
     padding: 10px 0px 20px 40px;
   }
 
+  .head1 {
+    font-size: 95%;
+  }
+
   #head2 {
     font-size: 120%; 
   }

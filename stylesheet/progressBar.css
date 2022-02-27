@@ -1,0 +1,28 @@
+.progressBar {
+    width: 100%;
+    height: 20px;
+    border-radius: 1.5em;
+    background-color: #fff;
+    border: 1.5px solid #000000b0;        
+}
+
+.bar {
+    line-height: 20px;        
+    height: 100%;
+    border-radius: 1.5em;
+    display: block;        
+    text-align: center;
+    background-color: #ff9e22;        
+    color: black;
+}
+
+@media only screen and (max-width: 300px) {
+    .progressBar {
+        height: 15px;
+    }
+
+    .bar {
+        line-height: 15px;
+        font-size: 70%;
+    }
+}

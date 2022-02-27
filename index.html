@@ -9,6 +9,7 @@
     <link href="./stylesheet/input.css" rel="stylesheet">
     <link href="./stylesheet/scrollBar.css" rel="stylesheet">
     <link href="./stylesheet/sidebar.css" rel="stylesheet">
+    <link href="./stylesheet/progressBar.css" rel="stylesheet">
 </head>
 
 <body>
@@ -18,7 +19,6 @@
         <br />
         <a class="link" id="ho" onclick="openPage('home', 'ho')">Home</a>
         <a class="link" id="al" onclick="openPage('all', 'al')">All tasks</a>
-        <a class="link" id="co" onclick="openPage('completed', 'co')">Completed</a>
         <a class="link" id="ab" onclick="openPage('about', 'ab')">About</a>
     </div>
 
@@ -58,24 +58,17 @@
             <br />
             <h1 id="title">&nbsp; All tasks</h1>
 
-            <h1>Doing</h1>
+            <div class="progressBar">
+                <strong class="bar" id="done"></strong>
+            </div>
+            <h1 class="head1">Doing</h1>
             <h2 id="head2"></h2>
-            <ul id="myUL">
+            <ul id="myUL2">
             </ul>
             <br />
-            <h1>Completed</h1>
-            <br />
-        </div>
-
-        <div id="completed" class="tabcontent">
-            <input type="text" name="search" placeholder="🔎 Search" id="searchBtn">
-            <div id="menuBtn" class="container" onclick="sidebar()">
-                <div class="bar1"></div>
-                <div class="bar2"></div>
-                <div class="bar3"></div>
-            </div>
-            <br />
-            <h1 id="title">&nbsp; Completed</h1>
+            <h1 class="head1">Completed</h1>
+            <ul id="myUL3">
+                <br />
         </div>
 
         <div id="about" class="tabcontent">
@@ -87,6 +80,7 @@
             </div>
             <br />
             <h1 id="title">&nbsp; About</h1>
+            <img src="./img/avt.jpg" alt="" style="width: 100%;">
             <p style="font-size: 120%; text-align: center;">Minh Quach's app.</p>
         </div>
     </div>
