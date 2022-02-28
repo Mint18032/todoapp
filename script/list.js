@@ -26,9 +26,15 @@ function update() {
     } else {
         document.getElementById("head2").innerHTML = "&emsp;" + tasks + " tasks to do";
     }
-    let d = completedList.length / (tasks + completedList.length);
-    document.getElementById('done').style.width = (d * 100) + '%';
-    document.getElementById('done').innerHTML = (d * 100).toFixed(0) + '%';
+    let total = tasks + completedList.length;
+    if (total !== 0) {
+        let d = completedList.length / total;
+        document.getElementById('done').style.width = (d * 100) + '%';
+        document.getElementById('done').innerHTML = (d * 100).toFixed(0) + '%';
+    } else {
+        document.getElementById('done').style.width = 0;
+        document.getElementById('done').innerHTML = '';
+    }
 }
 (update)();
 
